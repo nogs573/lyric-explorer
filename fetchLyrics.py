@@ -6,6 +6,7 @@ import os
 cId='117934e0aba84892bc39666d4ecdb161'
 cSecret='7f4ca2c9fdea41c2877d093124f43961'
 uri='https://localhost:8888/callback/'
+geniusId='bHhcliIcINMLRr-FlzniYIybs3HL-zcDN341voGkfXyqeKrnUF8ZjNmpXqTRRBi_'
 
 scope = "user-library-read"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope,client_id=cId, client_secret=cSecret, redirect_uri=uri))
@@ -54,7 +55,7 @@ def writeLyrics(library):
 
     baseId = 0
     artistIdx = 0
-    genius = Genius('bHhcliIcINMLRr-FlzniYIybs3HL-zcDN341voGkfXyqeKrnUF8ZjNmpXqTRRBi_')
+    genius = Genius(geniusId)
     while artistIdx < len(library):
         currIdx = 1
         currArtist = library[artistIdx][0]
