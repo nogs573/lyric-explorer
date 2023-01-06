@@ -3,8 +3,12 @@ from spotipy.oauth2 import SpotifyOAuth
 from lyricsgenius import Genius
 import os
 
+cId='117934e0aba84892bc39666d4ecdb161'
+cSecret='7f4ca2c9fdea41c2877d093124f43961'
+uri='https://localhost:8888/callback/'
+
 scope = "user-library-read"
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope,client_id=cId, client_secret=cSecret, redirect_uri=uri))
 results = sp.current_user_saved_tracks()
 
 lyricPath = "/lyrics/"
